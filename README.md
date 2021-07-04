@@ -5,13 +5,13 @@ This web application uses OpenCV.js to resize images. Designed with minimal CSS,
 Step 1: Upload your desired image\
 Step 2: Enter width and height\
 Step 3: Click on the "Resize" button to see the output\
-Step 4: Download the output button by clicking on the "Download" button\
+Step 4: Download the output button by clicking on the "Download" button
 
 ## Sources
 Live demo [here](https://opencv.sysu.in)\
 View source code on [Github](https://github.com/sysuin/opencv-resize-image)\
 Love VS Code? View on [Github1s](https://github1s.com/sysuin/opencv-resize-image)\
-Want to play with code? Edit on [CodePen](https://codepen.io/sysu/pen/KKmdeWV)\
+Want to play with code? Edit on [CodePen](https://codepen.io/sysu/pen/KKmdeWV)
 
 ## License
 MIT
