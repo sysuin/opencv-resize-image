@@ -8,10 +8,6 @@ This web application uses OpenCV.js to resize images. Designed with minimal CSS,
 > Step 4: Download the output button by clicking on the "Download" button
 
 ## Sources
-Live demo on [SySu](https://opencv.sysu.in)\
-View source code on [Github](https://github.com/sysuin/opencv-resize-image)\
-Love VS Code? View on [Github1s](https://github1s.com/sysuin/opencv-resize-image)\
-Want to play with code? Edit on [CodePen](https://codepen.io/sysu/pen/KKmdeWV)
 
 | Description | Link |
 | ------ | ------ |
