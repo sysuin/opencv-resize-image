@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resize Image Using OpenCV.js</title>
+    <script async src="https://5ty.in/pixel/62QIPAcbOOIKAZjm"></script>
+    <script async src="opencv.js"></script>
+    <style>
+        .button {
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: white;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+        .button1:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+
+        .button2:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Resize Image Using OpenCV.js</h2>
+    <p>
+        This web application uses OpenCV.js to resize images.  Designed with minimal CSS, follow these steps to get started. <br><br>
+        Step 1: Upload your desired image <br>
+        Step 2: Enter width and height <br>
+        Step 3: Click on the "Resize" button to see the output <br>
+        Step 4: Download the output button by clicking on the "Download" button <br><br>
+        View source code on <a href="https://www.w3schools.com" target="_blank">Github</a> <br>
+        Love VS Code? View on <a href="https://www.w3schools.com" target="_blank">Github1s</a> <br>
+        Want to play with code? Edit on <a href="https://www.w3schools.com" target="_blank">CodePen</a> <br>
+
+    </p>
+    <div>
+        <div class="control">
+            <input class="button button1" type="file" id="file_input">
+            <input class="button button2" type='number' id="id1" placeholder="Enter Width" />
+            <input class="button button2" type='number' id="id2" placeholder="Enter Height" />
+            <button class="button button2" onclick="resize_img('id1', 'id2')">Resize</button>
+            <button class="button button1" onclick="download_image()">Download</button>
+            <br>
+        </div>
+    </div>
+
+    <img id="input_image">
+    <canvas id="output"></canvas>
+
+</body>
+<script>
+
+    let img_input = document.getElementById('input_image');
+    let file_input = document.getElementById('file_input');
+    file_input.addEventListener('change', (e) => {
+        img_input.src = URL.createObjectURL(e.target.files[0])
+    }, false);     
+
+    function resize_img(width, height) {
+        var input1 = Number(document.getElementById(width).value);
+        var input2 = Number(document.getElementById(height).value);
+
+        let src = cv.imread(img_input);
+        let dst = new cv.Mat();
+        let dsize = new cv.Size(input1, input2);
+        // You can try more different parameters
+        cv.resize(src, dst, dsize, 0, 0, cv.INTER_AREA);
+        cv.imshow('output', dst);
+        src.delete();
+        dst.delete();
+    }
+
+    function download_image() {
+        var canvas = document.getElementById("output");
+        image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+        var link = document.createElement('a');
+        link.download = "sysu.png";
+        link.href = image;
+        link.click();
+    }
+
+</script>
+
+</html>
